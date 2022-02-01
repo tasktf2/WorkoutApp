@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.Button.Toggle" parent="android:Widget">
+        <item name="background">@drawable/btn_play_toggle</item>
+        <item name="android:textOff" />
+        <item name="android:textOn" />
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/btn_play_toggle</item>
+        <item name="android:gravity">center</item>
+
+
+    </style>
+
+    <style name="Widget.AppCompat.TextView.toButton" parent="android:Widget">
+        <item name="android:background">@drawable/bg_rounded_24</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">auto</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:elevation">24dp</item>
+
+    </style>
+
+</resources>
