@@ -1,6 +1,7 @@
 package com.setjy.workoutapp.ui.screen
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -19,57 +20,54 @@ import com.setjy.workoutapp.ui.theme.WorkoutAppTheme
 @Preview(showBackground = true)
 @Composable
 fun WelcomePreview() {
-    WelcomeScreen()
+    WorkoutAppTheme {
+        WelcomeScreen()
+    }
 }
 
 @Composable
 fun WelcomeScreen() {
-
-    WorkoutAppTheme {
-        Scaffold(modifier = Modifier.fillMaxSize()) {
-            it
-            Column(
-                verticalArrangement = Arrangement.spacedBy(20.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(horizontal = 16.dp)
-            ) {
-                Spacer(modifier = Modifier.height(0.dp))
-                StartButton(modifier = Modifier.weight(1.6f))
-                Row(
-                    horizontalArrangement = Arrangement.spacedBy(20.dp),
-                    modifier = Modifier.weight(1f)
-                ) {
-                    CustomButton(
-                        text = "Training History",
-                        icon = Icons.Rounded.History,
-                        modifier = Modifier.weight(1f)
-                    )
-                    CustomButton(
-                        text = "Graphs",
-                        icon = Icons.Rounded.Timeline,
-                        modifier = Modifier.weight(1f)
-                    )
-                }
-                Row(
-                    horizontalArrangement = Arrangement.spacedBy(20.dp),
-                    modifier = Modifier.weight(1f)
-                ) {
-                    CustomButton(
-                        text = "Training Settings",
-                        icon = Icons.Rounded.SettingsAccessibility,
-                        modifier = Modifier.weight(1f)
-                    )
-                    CustomButton(
-                        text = "Settings",
-                        icon = Icons.Rounded.Settings,
-                        modifier = Modifier.weight(1f)
-                    )
-                }
-                Spacer(modifier = Modifier.height(0.dp))
-            }
+    Column(
+        verticalArrangement = Arrangement.spacedBy(20.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = MaterialTheme.colors.background)
+            .padding(horizontal = 16.dp)
+    ) {
+        Spacer(modifier = Modifier.height(0.dp))
+        StartButton(modifier = Modifier.weight(1.6f))
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(20.dp),
+            modifier = Modifier.weight(1f)
+        ) {
+            CustomButton(
+                text = "Training History",
+                icon = Icons.Rounded.History,
+                modifier = Modifier.weight(1f)
+            )
+            CustomButton(
+                text = "Graphs",
+                icon = Icons.Rounded.Timeline,
+                modifier = Modifier.weight(1f)
+            )
         }
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(20.dp),
+            modifier = Modifier.weight(1f)
+        ) {
+            CustomButton(
+                text = "Training Settings",
+                icon = Icons.Rounded.SettingsAccessibility,
+                modifier = Modifier.weight(1f)
+            )
+            CustomButton(
+                text = "Settings",
+                icon = Icons.Rounded.Settings,
+                modifier = Modifier.weight(1f)
+            )
+        }
+        Spacer(modifier = Modifier.height(0.dp))
     }
 }
 
@@ -102,7 +100,6 @@ private fun CustomButton(text: String, icon: ImageVector, modifier: Modifier) {
                         .widthIn(max = 115.dp),
                     textAlign = TextAlign.Center
                 )
-
             }
         }
     }
